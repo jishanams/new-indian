@@ -1,4 +1,4 @@
-﻿{% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -452,6 +452,21 @@
 
     .hstat:last-child {
       border-right: 0
+    }
+
+    @media (max-width: 768px) {
+      .hero-stats .container {
+        justify-content: space-around;
+        gap: 10px;
+        padding: 15px 0;
+      }
+      .hstat {
+        flex: 1 1 40%;
+        padding: 10px;
+        margin-right: 0;
+        border-right: none;
+        text-align: center;
+      }
     }
 
     .hstat .n {
