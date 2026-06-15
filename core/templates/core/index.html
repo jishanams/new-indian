@@ -238,7 +238,7 @@
     }
 
     .slide-3 {
-      background: linear-gradient(115deg, #7A1212 0%, var(--ni-red) 0%, #8C1B1B 50%, var(--nexa-black) 50.2%, #1C212B 100%)
+      background: url("{% static 'banner3.png' %}") center/cover no-repeat;
     }
 
     .slide .container {
@@ -364,6 +364,10 @@
     .badge.auth {
       background: var(--gold);
       color: var(--nexa-black)
+    }
+
+    .ml {
+      max-width: 600px;
     }
 
     .hero .ml {
@@ -1357,7 +1361,7 @@
               <span class="badge arena">Arena</span>
               <span class="badge nexa">N E X A</span>
             </div>
-            <h1 class="malayalam-title">സർവീസ് ചെയ്യാൻ ഇനി ചുരമിറങ്ങേണ്ട</h1>
+            <h1 class="malayalam-title">സർവീസ് ചെയ്യാൻ ഇനി <em>ചുരമിറങ്ങേണ്ട</em> </h1>
             <p class="ml">25 Years of Trusted Service — പണി വന്നാൽ ചുരമിറങ്ങേണ്ട.</p>
             <p class="sub">Authorized partner for Maruti Suzuki, Arena and Nexa. Free service to insurance claims —
               trained technicians and genuine parts at Mysore Road, Sultan Bathery.</p>
@@ -1889,7 +1893,7 @@
       function reset() { clearInterval(timer); start(); }
       function start() {
         if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-          timer = setInterval(next, 5500);
+          timer = setInterval(next, 5800);
         }
       }
       document.getElementById('nextBtn').addEventListener('click', () => { next(); reset(); });
