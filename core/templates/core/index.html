@@ -1,4 +1,4 @@
-﻿{% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -1221,6 +1221,11 @@
     }
 
     @media(max-width:760px) {
+      .slide-1 {
+        background: linear-gradient(to right, rgba(13, 47, 107, 0.9), rgba(16, 19, 25, 0.8)),
+        url("{% static 'banner1.jpeg' %}") right center/cover no-repeat;
+      }
+
       .logo-img {
         height: 42px
       }
@@ -1255,6 +1260,16 @@
       .hero .container,
       .slide .container {
         padding: 56px 20px 76px
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .hero-ctas .btn {
+        width: 100%;
+        text-align: center;
       }
 
       .slider-arrow {
