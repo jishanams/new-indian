@@ -1,4 +1,4 @@
-﻿{% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -229,16 +229,22 @@
       pointer-events: none
     }
 
+    .slide-1, .slide-2, .slide-3 {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
     .slide-1 {
-      background: url("{% static 'banner1.png' %}") center/cover no-repeat;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("{% static 'banner1.png' %}");
     }
 
     .slide-2 {
-      background: url("{% static 'banner2.png' %}") center/cover no-repeat;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("{% static 'banner2.png' %}");
     }
 
     .slide-3 {
-      background: url("{% static 'banner3.png' %}") center/cover no-repeat;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("{% static 'banner3.png' %}");
     }
 
     .slide .container {
