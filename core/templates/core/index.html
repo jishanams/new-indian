@@ -1,4 +1,4 @@
-{% load static %}
+﻿{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,17 +76,20 @@
 
     /* ===== Top bar ===== */
     .topbar {
-      background: var(--nexa-black);
+      background: #13274f;
       color: #B7BFCC;
       font-size: 13px;
       padding: 6px 0
     }
 
+
+
     .topbar .container {
       display: flex;
       justify-content: space-between;
       gap: 12px;
-      flex-wrap: wrap
+      flex-wrap: wrap;
+
     }
 
     .topbar b {
@@ -144,7 +147,7 @@
     }
 
     .foot-logo img {
-      height: 78px;
+      height: 108px;
       width: auto;
       display: block;
     }
@@ -213,7 +216,7 @@
 
     .slides {
       display: flex;
-      transition: transform .65s cubic-bezier(.77, 0, .18, 1)
+      transition: transform 2.2s cubic-bezier(.77, 0, .18, 1)
     }
 
     .slide {
@@ -238,24 +241,28 @@
     }
 
     .slide-1 {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
-      url("{% static 'banner1.png' %}");
+      background-image: url("{% static 'banner1.jpeg' %}");
     }
 
     .slide-2 {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
-      url("{% static 'banner2.png' %}");
+      background-image:url("{% static 'banner2.jpg' %}");
+
     }
 
     .slide-3 {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
-      url("{% static 'banner3.png' %}");
+      background-image: url("{% static 'banner3.jpeg' %}");
     }
 
     .slide .container {
-      padding: 84px 20px 70px;
+      padding: 84px 20px 140px;
       position: relative;
-      z-index: 1
+      z-index: 1;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
     .slide h1 {
@@ -398,8 +405,12 @@
     .hero-ctas {
       display: flex;
       gap: 14px;
-      margin-top: 34px;
-      flex-wrap: wrap
+      flex-wrap: wrap;
+      position: absolute;
+      bottom: 40px;
+      left: 20px;
+      right: 20px;
+      justify-content: center;
     }
 
     .btn {
@@ -413,7 +424,8 @@
 
     .btn-red {
       background: var(--ni-red);
-      color: #fff
+      color: #fff;
+
     }
 
     .btn-red:hover {
@@ -441,7 +453,6 @@
     .hero-stats .container {
       display: flex;
       flex-wrap: wrap;
-      width: 100%
     }
 
     .hstat {
@@ -613,17 +624,227 @@
     }
 
     .svc.featured {
-      background: var(--nexa-black);
+      background: linear-gradient(rgb(102 128 182 / 70%), rgba(16, 19, 25, 0.7)),
+      url("{% static 'freeservice.png' %}");
+      background-size: cover;
+      background-position: center;
       color: #fff;
       border-color: var(--nexa-black)
     }
 
     .svc.featured p {
-      color: #A9B4C8
+      color: white
     }
 
     .svc.featured .ic {
       background: rgba(255, 255, 255, .1)
+    }
+
+
+    .svc.paid {
+      background: linear-gradient(rgb(102 128 182 / 70%), rgba(16, 19, 25, 0.7)),
+      url("{% static 'paidservice.png' %}");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      border-color: var(--nexa-black)
+    }
+
+    .svc.paid p {
+      color: white
+    }
+
+    .svc.paid .ic {
+      background: rgba(255, 255, 255, .1);
+      color: #fff;
+    }
+
+
+    .svc.warranty {
+      background: linear-gradient(rgb(102 128 182 / 70%), rgba(16, 19, 25, 0.7)),
+      url("{% static 'warranty.png' %}");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      border-color: var(--nexa-black)
+    }
+
+    .svc.warranty p {
+      color: white
+    }
+
+    .svc.warranty .ic {
+      background: rgba(255, 255, 255, .1);
+      color: #fff;
+    }
+
+    .svc.body-repair {
+      background: linear-gradient(rgb(102 128 182 / 70%), rgba(16, 19, 25, 0.7)),
+      url("{% static 'body-repair.png' %}");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      border-color: var(--nexa-black)
+    }
+
+    .svc.body-repair p {
+      color: white
+    }
+
+    .svc.body-repair .ic {
+      background: rgba(255, 255, 255, .1);
+      color: #fff;
+    }
+
+    .svc.painting {
+      background: linear-gradient(rgb(102 128 182 / 70%), rgba(16, 19, 25, 0.7)),
+      url("{% static 'paint-card.png' %}");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      border-color: var(--nexa-black)
+    }
+
+    .svc.painting p {
+      color: white
+    }
+
+    .svc.painting .ic {
+      background: rgba(255, 255, 255, .1);
+      color: #fff;
+    }
+
+
+    .svc.nexa {
+      background: linear-gradient(rgb(102 128 182 / 70%), rgba(16, 19, 25, 0.7)),
+      url("{% static 'nexa.png' %}");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      border-color: var(--nexa-black)
+    }
+
+    .svc.nexa p {
+      color: white
+    }
+
+    .svc.nexa .ic {
+      background: rgba(255, 255, 255, .1);
+      color: #fff;
+    }
+
+
+    .svc.arena {
+      background: linear-gradient(rgb(102 128 182 / 70%), rgba(16, 19, 25, 0.7)),
+      url("{% static 'arenaservice.png' %}");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      border-color: var(--nexa-black)
+    }
+
+    .svc.arena p {
+      color: white
+    }
+
+    .svc.arena .ic {
+      background: rgba(255, 255, 255, .1);
+      color: #fff;
+    }
+
+
+    .svc.alignment {
+      background: linear-gradient(rgb(102 128 182 / 70%), rgba(16, 19, 25, 0.7)),
+      url("{% static 'wheelalignment.png' %}");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      border-color: var(--nexa-black)
+    }
+
+    .svc.alignment p {
+      color: white
+    }
+
+    .svc.alignment .ic {
+      background: rgba(255, 255, 255, .1);
+      color: #fff;
+    }
+
+
+    .svc.water {
+      background: linear-gradient(rgb(102 128 182 / 70%), rgba(16, 19, 25, 0.7)),
+      url("{% static 'waterservice.png' %}");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      border-color: var(--nexa-black)
+    }
+
+    .svc.water p {
+      color: white
+    }
+
+    .svc.water .ic {
+      background: rgba(255, 255, 255, .1);
+      color: #fff;
+    }
+
+
+    .svc.ac {
+      background: linear-gradient(rgb(102 128 182 / 70%), rgba(16, 19, 25, 0.7)),
+      url("{% static 'ac.png' %}");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      border-color: var(--nexa-black)
+    }
+
+    .svc.ac p {
+      color: white
+    }
+
+    .svc.ac .ic {
+      background: rgba(255, 255, 255, .1);
+      color: #fff;
+    }
+
+
+    .svc.scanning {
+      background: linear-gradient(rgb(102 128 182 / 70%), rgba(16, 19, 25, 0.7)),
+      url("{% static 'scanning.png' %}");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      border-color: var(--nexa-black)
+    }
+
+    .svc.scanning p {
+      color: white
+    }
+
+    .svc.scanning .ic {
+      background: rgba(255, 255, 255, .1);
+      color: #fff;
+    }
+
+
+    .svc.claim {
+      background: linear-gradient(rgb(102 128 182 / 70%), rgba(16, 19, 25, 0.7)),
+      url("{% static 'claim-work.png' %}");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      border-color: var(--nexa-black)
+    }
+
+    .svc.claim p {
+      color: white
+    }
+
+    .svc.claim .ic {
+      background: rgba(255, 255, 255, .1);
+      color: #fff;
     }
 
     /* why */
@@ -751,7 +972,7 @@
 
     /* insurance band */
     .ins {
-      background: linear-gradient(110deg, var(--nexa-black), #1C2433);
+      background: #13274f;
       color: #fff
     }
 
@@ -797,7 +1018,7 @@
     }
 
     .form-card .fc-head {
-      background: var(--nexa-black);
+      background: #13274f;
       color: #fff;
       padding: 18px 26px;
       font-family: 'Roboto';
@@ -1292,12 +1513,25 @@
 
       .hero .container,
       .slide .container {
-        padding: 56px 20px 76px
+        padding: 84px 20px 140px;
+        position: relative;
+        z-index: 1;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
       }
 
       .hero-ctas {
-        flex-direction: column;
-        width: 100%;
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        position: absolute;
+        bottom: 40px;
+        left: 20px;
+        right: 20px;
       }
 
       .hero-ctas .btn {
@@ -1460,18 +1694,8 @@
 
         <div class="slide slide-1">
           <div class="container">
-            <div class="badge-row">
-              <span class="badge auth">Maruti Authorized Service Station</span>
-              <span class="badge arena">Arena</span>
-              <span class="badge nexa">N E X A</span>
-            </div>
-            <h1 class="malayalam-title">സർവീസ് ചെയ്യാൻ ഇനി <em>ചുരമിറങ്ങേണ്ട</em> </h1>
-            <p class="ml">25 Years of Trusted Service — പണി വന്നാൽ ചുരമിറങ്ങേണ്ട.</p>
-            <p class="sub">Authorized partner for Maruti Suzuki, Arena and Nexa. Free service to insurance claims —
-              trained technicians and genuine parts at Mysore Road, Sultan Bathery.</p>
             <div class="hero-ctas">
               <a href="#book" class="btn btn-red">Book Your Service</a>
-              <a href="tel:+916238902402" class="btn btn-ghost">📞 Call Workshop</a>
               <a href="#"
                 onclick="document.getElementById('videoModal').style.display='flex'; document.getElementById('promoVideo').play(); return false;"
                 class="btn btn-ghost">▶ Play Video</a>
@@ -1481,20 +1705,11 @@
 
         <div class="slide slide-2">
           <div class="container">
-            <div class="badge-row">
-              <span class="badge auth">Insurance Desk</span>
-              <span class="badge arena">Maruti Insurance (MI)</span>
-            </div>
-            <h1 class="malayalam-title">ഒരൊറ്റ കോളിൽ<br>ഞങ്ങൾ <em>റോഡിലെത്തും.</em></h1>
-            <p class="ml">Accident repair, claim works and policy renewal — all handled at the workshop.</p>
-            <p class="sub">The insurer settles directly with us. You drop your car, we handle the survey, estimate and
-              repair — you just collect it.</p>
+
             <div class="hero-ctas">
               <a href="#insurance" class="btn btn-red">Insurance Services</a>
-              <a href="#book" class="btn btn-ghost">Book a Claim Work</a>
-              <a href="#"
-                onclick="document.getElementById('videoModal').style.display='flex'; document.getElementById('promoVideo').play(); return false;"
-                class="btn btn-ghost">▶ Play Video</a>
+
+
 
             </div>
           </div>
@@ -1502,20 +1717,11 @@
 
         <div class="slide slide-3">
           <div class="container">
-            <div class="badge-row">
-              <span class="badge auth">Body Shop</span>
-              <span class="badge arena">Factory Finish Painting</span>
-            </div>
-            <h1 class="malayalam-title"><em>ഞായറും</em> ഞങ്ങൾ<br>പണി മുടക്കില്ല.</h1>
-            <p class="ml">Body repairing, painting and wheel alignment — built for Wayanad's hill roads.</p>
-            <p class="sub">Dent removal, panel work and full-body painting with exact factory color matching, plus
-              computerized wheel alignment after every repair.</p>
+
+
             <div class="hero-ctas">
               <a href="#book" class="btn btn-red">Get a Repair Estimate</a>
-              <a href="#services" class="btn btn-ghost">View All Services</a>
-              <a href="#"
-                onclick="document.getElementById('videoModal').style.display='flex'; document.getElementById('promoVideo').play(); return false;"
-                class="btn btn-ghost">▶ Play Video</a>
+
             </div>
           </div>
         </div>
@@ -1569,70 +1775,62 @@
       </p>
       <div class="svc-grid">
         <div class="svc featured">
-          <div class="ic">🆓</div>
+
           <h3>Free Service</h3>
           <p>Scheduled free services for new Maruti Suzuki vehicles, as per the company service schedule.</p>
         </div>
-        <div class="svc">
-          <div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-wrench" viewBox="0 0 16 16">
-              <path
-                d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364zm13.37 9.019.528.026.287.445.445.287.026.529L15 13l-.242.471-.026.529-.445.287-.287.445-.529.026L13 15l-.471-.242-.529-.026-.287-.445-.445-.287-.026-.529L11 13l.242-.471.026-.529.445-.287.287-.445.529-.026L13 11z" />
-            </svg></div>
+        <div class="svc paid">
+
           <h3>Paid Service</h3>
           <p>Periodic maintenance with genuine parts — oil, filters, brakes, full checkup.</p>
         </div>
-        <div class="svc">
-          <div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-shield-shaded" viewBox="0 0 16 16">
-              <path fill-rule="evenodd"
-                d="M8 14.933a1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56" />
-            </svg></div>
+        <div class="svc warranty">
+
           <h3>Warranty Service</h3>
           <p>Warranty repairs and replacements handled directly, with full documentation.</p>
         </div>
-        <div class="svc">
-          <div class="ic">⬛</div>
+        <div class="svc nexa">
+
           <h3>Nexa Service</h3>
           <p>Authorized servicing for Nexa range — Baleno, Fronx, Grand Vitara, Ciaz, Jimny, Invicto and more.</p>
         </div>
-        <div class="svc">
-          <div class="ic">🔵</div>
+        <div class="svc arena">
+
           <h3>Arena Service</h3>
           <p>Complete care for Arena models — Swift, Alto, WagonR, Brezza, Dzire, Ertiga and more.</p>
         </div>
-        <div class="svc">
-          <div class="ic">🚗</div>
+        <div class="svc body-repair">
+
           <h3>Body Repairing Works</h3>
           <p>Dent removal, panel work and accident body repairs restored to factory finish.</p>
         </div>
-        <div class="svc">
-          <div class="ic">📋</div>
+        <div class="svc claim">
+
           <h3>Claim Works</h3>
           <p>Accident insurance claims processed end to end — survey, estimate, repair, settlement.</p>
         </div>
-        <div class="svc">
-          <div class="ic">🎨</div>
+        <div class="svc painting">
+
           <h3>Painting</h3>
           <p>Full-body and panel painting with exact factory color matching.</p>
         </div>
-        <div class="svc">
-          <div class="ic">⚙️</div>
+        <div class="svc alignment">
+
           <h3>Wheel Alignment</h3>
           <p>Computerized alignment and balancing — essential for Wayanad's hill roads.</p>
         </div>
-        <div class="svc">
-          <div class="ic">💦</div>
+        <div class="svc water">
+
           <h3>Water Service</h3>
           <p>Exterior wash, underbody cleaning and interior vacuuming.</p>
         </div>
-        <div class="svc">
-          <div class="ic">❄️</div>
+        <div class="svc ac">
+
           <h3>A/C Works</h3>
           <p>A/C gas refilling, cooling coil service and compressor repairs.</p>
         </div>
-        <div class="svc">
-          <div class="ic">💻</div>
+        <div class="svc scanning">
+
           <h3>Scanning Works</h3>
           <p>Computerized diagnostics to detect engine, sensor and ECU faults accurately.</p>
         </div>
@@ -1699,6 +1897,15 @@
       <div class="eyebrow">Workshop Gallery</div>
       <h2 class="sec-title">Take A Look Inside</h2>
       <p class="sec-sub">Our service bays, equipment and team at work — see the facility before you visit.</p>
+
+      <div
+        style="margin-bottom: 30px; border-radius: var(--radius); overflow: hidden; box-shadow: 0 10px 30px rgba(13, 47, 107, .1);">
+        <video controls playsinline
+          style="width: 100%; display: block; max-height: 500px; object-fit: cover; background: #000;">
+          <source src="{% static 'New Indian video.MOV' %}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <div class="gallery-grid">
         <div class="g-item wide">
           <img src="{% static 'service center.png' %}" alt="Trained technician team">
@@ -1968,16 +2175,12 @@
     </div>
   </section>
 
-  
+
   <!-- Google Map Embed -->
   <section id="map" style="width: 100%; line-height: 0;">
-    <iframe 
-      src="https://www.google.com/maps?q=MARUTI+SUZUKI+AUTHORISED+SERVICE+CENTRE(NEXA,+ARENA+)-NEW+INDIAN,+Mysore+Road,+Sultan+Bathery&output=embed" 
-      width="100%" 
-      height="450" 
-      style="border:0;" 
-      allowfullscreen="" 
-      loading="lazy" 
+    <iframe
+      src="https://www.google.com/maps?q=MARUTI+SUZUKI+AUTHORISED+SERVICE+CENTRE(NEXA,+ARENA+)-NEW+INDIAN,+Mysore+Road,+Sultan+Bathery&output=embed"
+      width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
       referrerpolicy="no-referrer-when-downgrade">
     </iframe>
   </section>
@@ -2047,7 +2250,7 @@
       function reset() { clearInterval(timer); start(); }
       function start() {
         if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-          timer = setInterval(next, 5800);
+          timer = setInterval(next, 8000);
         }
       }
       document.getElementById('nextBtn').addEventListener('click', () => { next(); reset(); });
