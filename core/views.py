@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import datetime
+import urllib.parse
 from django.conf import settings
-from twilio.rest import Client
 from .models import Booking
 
 def home_view(request):
@@ -42,18 +42,18 @@ def home_view(request):
             f"Notes: {booking.notes}"
         )
         
-        # Send message via Twilio
-        try:
-            client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
-            message = client.messages.create(
-                from_=settings.TWILIO_WHATSAPP_NUMBER,
-                body=message_body,
-                to=settings.TARGET_WHATSAPP_NUMBER
-            )
-            return render(request, 'core/index.html', {'success': True})
-        except Exception as e:
-            error_msg = f"Error sending WhatsApp message: {str(e)}"
-            print(error_msg)
-            return render(request, 'core/index.html', {'success': False, 'error': error_msg})
+        # URL encode the message
+        encoded_message = urllib.parse.quote(message_body)
+        
+        # Extract the number from settings (e.g., 'whatsapp:+919847554297' -> '919847554297')
+        # Fallback to the website's default number if setting is missing
+        target_number = "918075856132"
+        if hasattr(settings, 'TARGET_WHATSAPP_NUMBER') and settings.TARGET_WHATSAPP_NUMBER:
+            target_number = settings.TARGET_WHATSAPP_NUMBER.replace('whatsapp:+', '').replace('+', '')
+            
+        whatsapp_url = f"https://wa.me/{target_number}?text={encoded_message}"
+        
+        # Redirect the user to WhatsApp
+        return redirect(whatsapp_url)
             
     return render(request, 'core/index.html')
