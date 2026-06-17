@@ -1,4 +1,4 @@
-﻿{% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -265,6 +265,57 @@
       text-align: center;
     }
 
+    @media (max-width: 768px) {
+
+      .slide-1,
+      .slide-2,
+      .slide-3 {
+        background-size: contain;
+        background-position: top center;
+      }
+
+      .slide .container {
+        min-height: auto;
+        padding: 55vw 15px 80px;
+      }
+
+      .slide h1 {
+        font-size: clamp(32px, 8vw, 40px);
+      }
+
+      .malayalam-title {
+        font-size: clamp(24px, 6vw, 32px) !important;
+      }
+
+      .hero .ml {
+        font-size: 16px;
+        margin-top: 12px;
+      }
+
+      .hero .sub {
+        font-size: 14px;
+        margin-top: 10px;
+      }
+
+      .hero-ctas {
+        bottom: 20px;
+      }
+
+      .slider-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+      }
+
+      .slider-arrow.prev {
+        left: 8px;
+      }
+
+      .slider-arrow.next {
+        right: 8px;
+      }
+    }
+
     .slide h1 {
       font-size: clamp(40px, 6.2vw, 76px);
       font-weight: 800;
@@ -467,17 +518,31 @@
 
     @media (max-width: 768px) {
       .hero-stats .container {
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 10px;
-        padding: 15px 0;
+        padding: 20px 15px;
       }
 
       .hstat {
-        flex: 1 1 40%;
-        padding: 10px;
+        padding: 10px 5px;
         margin-right: 0;
         border-right: none;
         text-align: center;
+      }
+
+      .hstat .n {
+        font-size: 26px;
+      }
+
+      .hstat .l {
+        font-size: 11px;
+        letter-spacing: 1px;
+      }
+
+      .hstat img {
+        max-width: 100%;
+        max-height: 40px;
       }
     }
 
@@ -857,6 +922,13 @@
       grid-template-columns: 1.05fr 1fr;
       gap: 60px;
       align-items: center
+    }
+
+    @media (max-width: 768px) {
+      .why-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
     }
 
     .why-list {
@@ -1476,9 +1548,7 @@
     }
 
     @media(max-width:760px) {
-      .slide-1 {
-        background-position: right center;
-      }
+
 
       .logo-img {
         height: 42px
@@ -1511,42 +1581,18 @@
         box-shadow: 0 16px 30px rgba(0, 0, 0, .08)
       }
 
-      .hero .container,
-      .slide .container {
-        padding: 84px 20px 140px;
-        position: relative;
-        z-index: 1;
-        min-height: 80vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
 
-      .hero-ctas {
-        display: flex;
-        gap: 14px;
-        flex-wrap: wrap;
-        position: absolute;
-        bottom: 40px;
-        left: 20px;
-        right: 20px;
-      }
+
+
 
       .hero-ctas .btn {
         width: 100%;
         text-align: center;
       }
 
-      .slider-arrow {
-        display: none
-      }
 
-      .hstat {
-        padding-right: 20px;
-        margin-right: 20px
-      }
+
+
 
       .f-row {
         grid-template-columns: 1fr
@@ -1696,9 +1742,9 @@
           <div class="container">
             <div class="hero-ctas">
               <a href="#book" class="btn btn-red">Book Your Service</a>
-              <a href="#"
+              <!-- <a href="#"
                 onclick="document.getElementById('videoModal').style.display='flex'; document.getElementById('promoVideo').play(); return false;"
-                class="btn btn-ghost">▶ Play Video</a>
+                class="btn btn-ghost">▶ Play Video</a> -->
             </div>
           </div>
         </div>
@@ -2249,9 +2295,7 @@
       function next() { go(i + 1) }
       function reset() { clearInterval(timer); start(); }
       function start() {
-        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-          timer = setInterval(next, 8000);
-        }
+        timer = setInterval(next, 5000);
       }
       document.getElementById('nextBtn').addEventListener('click', () => { next(); reset(); });
       document.getElementById('prevBtn').addEventListener('click', () => { go(i - 1); reset(); });
